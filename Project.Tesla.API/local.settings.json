@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "TokenManagementDBConnection": "https://project-tesla2.documents.azure.com:443/"
+  }
+}
