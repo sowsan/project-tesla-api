@@ -6,6 +6,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.24" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.6" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -14,5 +19,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>

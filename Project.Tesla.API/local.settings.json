@@ -1,5 +1,14 @@
 ﻿{
-  "ConnectionStrings": {
-    "TokenManagementDBConnection": "https://project-tesla2.documents.azure.com:443/"
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "TokenManagementDBConnection": "AccountEndpoint=https://project-tesla2.documents.azure.com:443/;AccountKey=EMWH7grErJEQH1bXdPmAB9TShiZqpwZovSFJnXTIkIcRMVsOHSXOXzJDgxcUefWyt2cfuIL0qvLnpvGqswqMCQ==;"
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*"
+  },
+  "ConnectionStrings" : {
+    "TokenManagementDBConnection": "AccountEndpoint=https://project-tesla2.documents.azure.com:443/;AccountKey=EMWH7grErJEQH1bXdPmAB9TShiZqpwZovSFJnXTIkIcRMVsOHSXOXzJDgxcUefWyt2cfuIL0qvLnpvGqswqMCQ==;"
   }
 }
