@@ -26,17 +26,24 @@ namespace Project.Tesla.API
 
         {
             log.LogInformation("RegisterSessionPOST HTTP trigger function processed a request.");
+            
+            try {
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                log.LogInformation(requestBody);
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            log.LogInformation(requestBody);
+                Session session = JsonConvert.DeserializeObject<Session>(requestBody);
+                if(session.SessionID == null) {
+                    session.SessionID = Guid.NewGuid().ToString();
+                }
 
-            Session session = JsonConvert.DeserializeObject<Session>(requestBody);
-            session.SessionID = Guid.NewGuid().ToString();
+                await CreateSessionDocument("TokenManagement", "project-tesla2", session);
 
-            //await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("TokenManagement", "project-tesla2"), session);
-            await CreateSessionDocument("TokenManagement", "project-tesla2", session);
-
-            return (ActionResult)new OkObjectResult(session.SessionID);
+                return (ActionResult)new OkObjectResult(session.SessionID);
+            }
+            catch(Exception ex) {
+                log.LogError(ex.Message);
+                return new BadRequestObjectResult(ex.Message);
+            }
         }
 
 

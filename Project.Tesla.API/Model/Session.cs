@@ -9,9 +9,9 @@ namespace Project.Tesla.API.Model
         public string SessionID { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public int TherapistId { get; set; }
+        public string TherapistId { get; set; }
         public string ActivityName { get; set; }
-        public int ChildID { get; set; }
+        public string ChildID { get; set; }
         public int RewardGoal { get; set; }
         public int ActivityDuration { get; set; }
         public List<Behavior> Behaviors { get; set; }
