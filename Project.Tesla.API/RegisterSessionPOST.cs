@@ -21,7 +21,7 @@ namespace Project.Tesla.API
     {
         [FunctionName("RegisterSessionPOST")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "session")] HttpRequest req,
             ILogger log )
 
         {
@@ -36,7 +36,7 @@ namespace Project.Tesla.API
             //await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("TokenManagement", "project-tesla2"), session);
             await CreateSessionDocument("TokenManagement", "project-tesla2", session);
 
-            return (ActionResult)new OkObjectResult("ok");
+            return (ActionResult)new OkObjectResult(session.SessionID);
         }
 
 
